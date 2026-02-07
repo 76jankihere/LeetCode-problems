@@ -1,93 +1,95 @@
-# 3507. Minimum Pair Removal to Sort Array I
+# LeetCode Problems Repository 
 
-**Difficulty:** Easy  
-**Language:** Python  
-**Topic:** Array, Simulation  
-
----
-
-## 🧠 Problem Summary
-
-You are given an array `nums`.  
-Repeatedly remove the **adjacent pair with the minimum sum** (leftmost if tie)  
-and replace it with their sum.
-
-Return the **minimum number of operations** needed to make the array **non-decreasing**.
+This repository contains my solutions to **LeetCode problems**, implemented primarily in **Python**.  
+The goal of this repository is to **practice Data Structures & Algorithms**, improve **problem-solving skills**, and maintain a **well-organized reference** for interview preparation.
 
 ---
 
-## 💡 Approach
+## 📌 What This Repository Contains
 
-- The operation is **forced**, so we simulate it step by step.
-- While the array is not non-decreasing:
-  - Find the leftmost adjacent pair with the minimum sum.
-  - Replace the pair with their sum.
-  - Count the operation.
-
-Array size ≤ 50, so direct simulation is efficient.
-
----
-
-## ⏱️ Complexity
-
-- **Time:** `O(n³)` in worst case (small constraints)
-- **Space:** `O(1)` extra space
+- Solutions to LeetCode problems across multiple difficulty levels:
+  - Easy
+  - Medium
+  - Hard
+- Clean, readable, and optimized code
+- Multiple approaches where applicable
+- Well-structured solutions focused on correctness and efficiency
+- Continuous updates as more problems are solved
 
 ---
 
-## ✅ Example
+## 🧠 Problem-Solving Approach
 
-**Input**
-nums = [5,2,3,1]
+Each solution in this repository generally follows these principles:
 
-**Output**
-2
-
-
----
-
-## 🧩 Code
-
-```python
-class Solution(object):
-    def minimumPairRemoval(self, nums):
-        def nondecreasing(a):
-            for i in range(len(a) - 1):
-                if a[i] > a[i + 1]:
-                    return False
-            return True
-
-        ops = 0
-
-        while not nondecreasing(nums):
-            best_i = 0
-            best_sum = nums[0] + nums[1]
-
-            for i in range(1, len(nums) - 1):
-                s = nums[i] + nums[i + 1]
-                if s < best_sum:
-                    best_sum = s
-                    best_i = i
-
-            nums[best_i] = best_sum
-            nums.pop(best_i + 1)
-            ops += 1
-
-        return ops
-🔗 LeetCode Link
-
-https://leetcode.com/problems/minimum-pair-removal-to-sort-array-i/
-
+- Clear understanding of the problem constraints
+- Efficient algorithmic approach (Greedy, DP, Two Pointers, Sliding Window, etc.)
+- Clean and readable implementation
+- Optimal time and space complexity where possible
+- Interview-friendly coding style
 
 ---
 
-## 4️⃣ Commit & push to GitHub
+## 🛠 Languages & Tools
 
-```bash
-git add .
-git commit -m "Add solution for LeetCode 3507 - Minimum Pair Removal"
-git push origin main
+- **Primary Language:** Python, java, C++, javascript, swift
+- **Platform:** LeetCode
+- **Concepts Covered:**
+  - Arrays & Strings
+  - Hashing
+  - Recursion
+  - Dynamic Programming
+  - Greedy Algorithms
+  - Trees & Graphs
+  - Sorting & Searching
+  - Bit Manipulation
 
-### 📌 LeetCode Practice
-- Solved daily LeetCode problems and documented solutions on GitHub
-- Focus on clean code, clarity, and interview-ready explanations
+---
+
+## 📂 Repository Structure
+```text
+LeetCode-problems/
+├── README.md        # Repository overview and usage guide
+├── easy/            # Easy-level LeetCode problems
+├── medium/          # Medium-level LeetCode problems
+└── hard/            # Hard-level LeetCode problems
+```
+
+> 📌 Folder structure may evolve as the repository grows.
+
+---
+
+## ▶️ How to Use This Repository
+
+1. Browse problems by difficulty or topic
+2. Open the solution file to review the logic
+3. Run the code locally to test different inputs
+4. Compare approaches and optimize further
+
+---
+
+## 🎯 Purpose of This Repository
+
+- Strengthen **DSA fundamentals**
+- Prepare for **technical interviews**
+- Track problem-solving progress over time
+- Build a **strong coding portfolio**
+- Maintain a personal reference for revision
+
+---
+
+## 🔄 Updates
+
+This repository is **actively maintained** and will be updated regularly with new problems and improved solutions.
+
+---
+
+## 📬 Connect With Me
+
+- **GitHub:** https://github.com/76jankihere  
+- **LeetCode:** (https://leetcode.com/u/76jankiparmar/)
+- **LinkedIn:** (https://www.linkedin.com/in/janki-parmar-b1466b176/)
+
+---
+
+⭐ If you find this repository helpful, feel free to star it!
